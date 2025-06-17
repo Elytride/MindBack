@@ -1,0 +1,135 @@
+.settings-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly darker overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.settings-popup-content {
+  background-color: var(--background-color); /* Use theme background */
+  color: var(--text-color); /* Use theme text color */
+  padding: 30px; /* Increased padding */
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  border: 1px solid var(--border-color); /* Add theme border */
+  width: 90%; /* Make it responsive */
+  max-width: 400px; /* Max width */
+}
+
+.settings-popup-content h2 {
+  color: var(--header-color); /* Use theme header color */
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.settings-popup-content div {
+  margin-bottom: 15px; /* Spacing between input and label */
+}
+
+.settings-popup-content label {
+  color: var(--label-color); /* Use theme label color */
+  display: block; /* Make label a block element */
+  margin-bottom: 5px;
+}
+
+.settings-popup-content input[type="text"],
+.settings-popup-content input[type="password"] {
+  width: 100%; /* Full width input */
+  padding: 10px;
+  border: 1px solid var(--border-color); /* Use theme border */
+  border-radius: 4px;
+  background-color: var(--input-background); /* Use theme input background */
+  color: var(--input-text-color); /* Use theme input text color */
+  font-size: 1rem;
+}
+
+.settings-popup-content input[type="text"]:focus,
+.settings-popup-content input[type="password"]:focus {
+  outline: none;
+  border-color: var(--highlight-color); /* Use theme highlight color on focus */
+  box-shadow: 0 0 0 2px var(--highlight-glow); /* Use theme highlight glow */
+}
+
+.settings-popup-content button {
+  background-color: var(--button-background); /* Use theme button background */
+  color: var(--button-text-color); /* Use theme button text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  /* Removed margin-right: 10px; */
+}
+
+.settings-popup-content button:hover {
+  background-color: var(--button-hover-background); /* Use theme button hover background */
+}
+
+/* Removed .settings-popup-content button:last-child margin-right: 0; */
+
+.api-key-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between input and button */
+}
+
+.api-key-input-container input[type="text"],
+.api-key-input-container input[type="password"] {
+  flex-grow: 1; /* Allow input to take up available space */
+}
+
+.clear-api-key-button {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color); /* Use theme text color */
+  cursor: pointer;
+  font-size: 0.55rem; /* Slightly smaller font size */
+  padding: 0 0.5px; /* Slightly adjusted padding */
+}
+
+.clear-api-key-button:hover {
+  color: var(--highlight-color); /* Use theme highlight color on hover */
+}
+
+.settings-buttons {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 10px; /* Space between buttons */
+  margin-top: 20px; /* Add space above the buttons */
+}
+
+.saved-message {
+  position: fixed;
+  top: 160px; /* Position at the top, moved down by another 80px */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--highlight-color); /* Use theme highlight color */
+  color: var(--background-color); /* Use theme background color for text */
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1002; /* Above the settings popup */
+  opacity: 1;
+  transition: opacity 1s ease-in-out; /* Adjusted transition duration */
+}
+
+.saved-message.fade-out {
+  opacity: 0;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
